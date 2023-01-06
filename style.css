@@ -1,0 +1,228 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+  border: 0;
+	box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+	height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.75rem;
+}
+
+a {
+	text-decoration: none;
+  color: #000000;
+}
+
+.gallery {
+	position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery .ceiling-top {
+	width: 100%;
+	min-height: 1024px;
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/CeilingTop.png");
+  background-repeat: repeat;
+	background-position: left top;
+}
+
+.gallery .ceiling {
+	width: 100%;
+	min-height: 512px;
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/Ceiling.png");
+  background-repeat: repeat;
+	background-position: left bottom;
+}
+
+.gallery .wall {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/Wall.png");
+	background-repeat: repeat;
+	background-position: left top;
+}
+
+@media only screen and (max-height: 740px) {
+	.gallery .wall {
+		margin-top: -50px;
+	}
+}
+
+.gallery .wall .canvas-wrapper {
+	width: 40%;
+	height: 60%;
+	min-width: 512px;
+	min-height: 512px;
+	margin-top: 5px;
+	margin-bottom: 75px;
+	position: relative;
+}
+
+@media only screen and (max-height: 930px) {
+	.gallery .wall .canvas-wrapper {
+		width: 40%;
+		height: 50%;
+		min-width: 312px;
+		min-height: 312px;
+		margin-top: 0px;
+		margin-bottom: 25px;
+	}
+}
+
+.gallery .wall .canvas-wrapper .passage {
+	position: absolute;
+	width: 512px;
+	height: calc(100% + 80px);
+	
+	background-repeat: repeat;
+	background-position: left top;
+	margin-top: -5px;
+}
+
+@media only screen and (max-height: 930px) {
+	.gallery .wall .canvas-wrapper .passage {
+		height: calc(100% + 25px);
+		margin-top: 0px;
+	}
+}
+
+.gallery .wall .canvas-wrapper .passage.left {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageCenter.png");
+	left: -768px;
+}
+
+.gallery .wall .canvas-wrapper .passage.right {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageCenterRight.png");
+	right: -768px;
+}
+
+.gallery .wall .canvas-wrapper .passage .passage-wrapper {
+	position: relative;
+	height: 100%;
+}
+
+.gallery .wall .canvas-wrapper .passage .passage-wrapper .passage-top {
+	position: absolute;
+	width: 512px;
+	height: 512px;
+	background-repeat: repeat;
+	background-position: left top;
+	top: -512px;
+}
+
+.gallery .wall .canvas-wrapper .passage.left .passage-wrapper .passage-top {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageTop.png");
+}
+
+.gallery .wall .canvas-wrapper .passage.right .passage-wrapper .passage-top {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageTopRight.png");
+}
+
+.gallery .wall .canvas-wrapper .passage .passage-wrapper .passage-bottom {
+	position: absolute;
+	width: 512px;
+	height: 512px;
+	background-repeat: repeat;
+	background-position: left top;
+	bottom: -512px;
+}
+
+.gallery .wall .canvas-wrapper .passage.left .passage-wrapper .passage-bottom {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageBottom.png");
+}
+
+.gallery .wall .canvas-wrapper .passage.right .passage-wrapper .passage-bottom {
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/PassageBottomRight.png");
+}
+
+@media only screen and (max-height: 740px) {
+	.gallery .wall .canvas-wrapper .passage .passage-wrapper .passage-top {
+		top: -462px;
+	}
+	
+	.gallery .wall .canvas-wrapper .passage .passage-wrapper .passage-bottom {
+		bottom: -462px;
+	}
+}
+
+.gallery .wall .canvas-wrapper .canvas {
+	width: 100%;
+	height: 100%;
+}
+
+.gallery .wall .canvas-wrapper .canvas.border-image {
+	border: 37px solid transparent;
+  -webkit-border-image: url(https://www.nkunited.de/ExternalImages/artGallery/ImageFrame_bright.png) 37 round;
+  -o-border-image: url(https://www.nkunited.de/ExternalImages/artGallery/ImageFrame_bright.png) 37 round;
+  border-image: url(https://www.nkunited.de/ExternalImages/artGallery/ImageFrame_bright.png) 37 round;
+	box-shadow: 0px 10px 20px 0px grey;
+}
+
+.gallery .wall .canvas-wrapper .canvas canvas {
+	display: block;
+}
+
+.gallery .wall .canvas-wrapper .info {
+	position: absolute;
+	right: 0;
+	bottom: -50px;
+	background-color: #FFFFFF;
+	padding: 30px 30px;
+	transform-origin: bottom right;
+	transform: scale(0.15);
+	transition: transform 250ms ease-out;
+	box-shadow: 0px 2px 5px 0px grey;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.gallery .wall .canvas-wrapper .info:hover {
+	transform: scale(1.0);
+}
+
+.gallery .wall .canvas-wrapper .info .button-fullscreen,
+.gallery .wall .canvas-wrapper .info .button-pictureframe {
+	cursor: pointer;	
+}
+
+.gallery .floor {
+	width: 100%;
+	min-height: 512px;
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/Floor.png");
+  background-repeat: repeat;
+	background-position: left top;
+}
+
+@media only screen and (max-height: 740px) {
+	.gallery .floor {
+		margin-top: -50px;
+	}
+}
+
+.gallery .floor-bottom {
+	width: 100%;
+	min-height: 1024px;
+	background-image: url("https://www.nkunited.de/ExternalImages/artGallery/FloorBottom.png");
+  background-repeat: repeat;
+	background-position: left top;
+}
